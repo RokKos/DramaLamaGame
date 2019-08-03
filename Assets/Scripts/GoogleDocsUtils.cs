@@ -86,16 +86,17 @@ public class GoogleDocsUtils : MonoBehaviour
             }
             list.Add(entry);
         }
+        list = CleanEmptyEntries(list);
         return list;
     }
 
-    public static string DecodeSpecialCharsFromCSV(string value)
+    private static string DecodeSpecialCharsFromCSV(string value)
     {
         value = value.TrimStart(TRIM_CHARS).TrimEnd(TRIM_CHARS).Replace("\\", "").Replace("<br>", "\n").Replace("<c>", ",");
         return value;
     }
 
-    public static string CleanReturnInCsvTexts(string text)
+    private static string CleanReturnInCsvTexts(string text)
     {
         text = text.Replace("\"\"", "'");
 
@@ -132,5 +133,21 @@ public class GoogleDocsUtils : MonoBehaviour
         return text;
     }
 
+
+    private static List<List<string>> CleanEmptyEntries(List<List<string>> entries) {
+        for (int j = 0; j < entries.Count; ++j)
+        {
+            for (int i = 0; i < entries[j].Count; ++i)
+            {
+                if (entries[j][i] == "")
+                {
+                    entries[j].RemoveAt(i);
+                    i--;
+                }
+            }
+        }
+
+        return entries;
+    }
 
 }
