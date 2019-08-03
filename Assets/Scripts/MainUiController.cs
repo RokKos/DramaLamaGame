@@ -45,11 +45,22 @@ public class MainUiController : MonoBehaviour
         bar_drama_fill_amount = Mathf.Min(1.0f, Mathf.Max(0.0f, bar_drama_fill_amount));
     }
 
+    public float GetTruthBar() {
+        return bar_truth_fill_amount;
+    }
+
+    public float GetEntertainmentBar() {
+        return bar_entertainment_fill_amount;
+    }
+    public float GetDramaBar() {
+        return bar_drama_fill_amount;
+    }
+
 
     public void SetupUI() {
-        main_text_.text = GoogleDocsUtils.GetMainText();
-        right_answer_text_.text = GoogleDocsUtils.GetRightAnswerText();
-        left_answer_text_.text = GoogleDocsUtils.GetLeftAnswerText();
+        main_text_.text = CardDataHelper.GetMainText();
+        right_answer_text_.text = CardDataHelper.GetRightAnswerText();
+        left_answer_text_.text = CardDataHelper.GetLeftAnswerText();
 
         bar_truth_.fillAmount = bar_truth_fill_amount;
         bar_entertaiment_.fillAmount = bar_entertainment_fill_amount;
