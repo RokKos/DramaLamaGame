@@ -58,12 +58,12 @@ public class MainUiState : MonoBehaviour
         main_menu_controller_.ChangeDramaFillAmount(drama_meter_change);
         CardDataHelper.SelectNewCard();
         main_menu_controller_.SetupUI();
-
+        EvaluateDeadConditions();
 
     }
 
     void EvaluateDeadConditions() {
-        bool dead = main_menu_controller_.GetTruthBar() < 0 || main_menu_controller_.GetEntertainmentBar() < 0 || main_menu_controller_.GetDramaBar() < 0;
+        bool dead = main_menu_controller_.GetTruthBar() <= 0 || main_menu_controller_.GetEntertainmentBar() <= 0 || main_menu_controller_.GetDramaBar() <= 0;
 
         if (dead) {
             SceneManager.LoadScene("GameOver");
