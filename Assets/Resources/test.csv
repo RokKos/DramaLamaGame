@@ -1,4 +1,3 @@
-Main Text,AnswerRightText,True Meter Right,Ent Meter Right,Drama Meter Right,AnswerLeft,True Meter Right,Ent Meter Right,Drama Meter Right
-"Gee Biscuits, I heard uncle Nigel was seen with servant boy in the stables.",Oh my! My butler withenesed it was two boys,−4,0,3,That is a statement wee too much if I may say so!,2,−3,0
-"Gee Biscuits, I heard uncle Nigel was seen with servant boy in the stables.",Oh my! My butler withenesed it was two boys,−4,0,3,I heard it was in the loo,−1,1,1
-"Gee Biscuits, I heard uncle Nigel was seen with servant boy in the stables.",I heard it was in the loo,−1,1,1,I heard it was in the loo,−1,1,1
+Main Text,Possible Answer,True Meter Right,Ent Meter Right,Drama Meter Right,Possible,True Meter Right,Ent Meter Right,Drama Meter Right,Possible Answer,True Meter Right,Ent Meter Right,Drama Meter Right
+"Gee Biscuits, I heard uncle Nigel was seen with servant boy in the stables.",Oh my! My butler withenesed it was two boys,−4,0,3,That is a statement wee too much if I may say so!,2,−3,0,I heard it was in the loo,−1,1,1
+Cheerio! I heard cheeky Margaret ate her soup with a fly in it!,I heard it gave her diarrhea and she was on the loo for 2 hours!,−2,0,3,It was just a raisin,3,−3,0,She was just getting some protein,0,4,0

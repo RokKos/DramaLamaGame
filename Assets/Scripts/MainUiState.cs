@@ -14,6 +14,7 @@ public class MainUiState : MonoBehaviour
     private void Start()
     {
         card_data_helper_.ReloadCardData(false);
+        CardDataHelper.SelectNewCard();
     }
 
     public void SelectCard(int side) {
