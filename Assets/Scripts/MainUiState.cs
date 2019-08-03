@@ -9,6 +9,8 @@ public class MainUiState : MonoBehaviour
 
     [SerializeField] MainUiController main_menu_controller_;
     [SerializeField] CardDataHelper card_data_helper_;
+    [SerializeField] Animator character_animator_;
+    [SerializeField] Animator main_ui_;
     private enum Card { Left = -1, Right = 1 };
 
     private void Start()
@@ -60,6 +62,8 @@ public class MainUiState : MonoBehaviour
         CardDataHelper.SelectNewCard();
         main_menu_controller_.SetupUI();
         EvaluateDeadConditions();
+        TriggerAnimations();
+
 
     }
 
@@ -70,5 +74,11 @@ public class MainUiState : MonoBehaviour
             SceneManager.LoadScene("GameOver");
         }
 
+    }
+
+    private void TriggerAnimations()
+    {
+        character_animator_.SetTrigger("ChangeCharacter");
+        main_ui_.SetTrigger("ChangeCharacter");
     }
 }
