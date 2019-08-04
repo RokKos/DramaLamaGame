@@ -16,6 +16,11 @@ public class MainUiState : MonoBehaviour
     [SerializeField] Animator right_answer_animator_;
 
     [SerializeField] AudioSource sfx_btn_click_;
+    [SerializeField] AudioSource sfx_action_;
+
+
+    [SerializeField] List<AudioClip> sfx_for_action_;
+    AudioClip prev_sound = null;
 
 
     private enum Card { Left = -1, Right = 1 };
@@ -79,6 +84,7 @@ public class MainUiState : MonoBehaviour
         StartCoroutine(TriggerAnimations());
 
         sfx_btn_click_.Play();
+        PlayRandomActionSFX();
 
     }
 
@@ -113,5 +119,14 @@ public class MainUiState : MonoBehaviour
         // This is hacky
         GameObject myEventSystem = GameObject.Find("EventSystem");
         myEventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
+    }
+
+    private void PlayRandomActionSFX() {
+        AudioClip clip_to_play = sfx_for_action_[Random.Range(0, sfx_for_action_.Count)];
+        while (clip_to_play == prev_sound) {
+            clip_to_play = sfx_for_action_[Random.Range(0, sfx_for_action_.Count)];
+        }
+
+        sfx_action_.PlayOneShot(clip_to_play);
     }
 }
