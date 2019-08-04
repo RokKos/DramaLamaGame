@@ -18,11 +18,13 @@ public class MainUiState : MonoBehaviour
     [SerializeField] AudioSource sfx_btn_click_;
     [SerializeField] AudioSource sfx_action_;
 
+
     [SerializeField] GameObject pln_game_over_;
 
 
     [SerializeField] List<AudioClip> sfx_for_action_;
-    AudioClip prev_sound = null;
+    AudioClip prev_sound_action_ = null;
+
 
 
     private enum Card { Left = -1, Right = 1 };
@@ -130,10 +132,10 @@ public class MainUiState : MonoBehaviour
 
     private void PlayRandomActionSFX() {
         AudioClip clip_to_play = sfx_for_action_[Random.Range(0, sfx_for_action_.Count)];
-        while (clip_to_play == prev_sound) {
+        while (clip_to_play == prev_sound_action_) {
             clip_to_play = sfx_for_action_[Random.Range(0, sfx_for_action_.Count)];
         }
-
+        prev_sound_action_ = clip_to_play;
         sfx_action_.PlayOneShot(clip_to_play);
     }
 

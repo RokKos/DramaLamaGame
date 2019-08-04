@@ -68,9 +68,7 @@ public class MainUiController : MonoBehaviour
         right_answer_text_.text = CardDataHelper.GetRightAnswerText();
         left_answer_text_.text = CardDataHelper.GetLeftAnswerText();
 
-        bar_truth_.fillAmount = bar_truth_fill_amount;
-        bar_entertaiment_.fillAmount = bar_entertainment_fill_amount;
-        bar_drama_.fillAmount = bar_drama_fill_amount;
+        StartCoroutine(FillBars());
     }
 
     public void SetReason(bool dead_by_truth, bool dead_by_entertainment, bool dead_by_drama) {
@@ -90,6 +88,29 @@ public class MainUiController : MonoBehaviour
             img_reason_.sprite = reasons_drama_;
             return;
         }
+    }
+
+    private IEnumerator FillBars() {
+        int slices = 100;
+        float time_delta = 1.0f / slices;
+
+        float diference_truth = bar_truth_fill_amount - bar_truth_.fillAmount;
+        float diference_enterteinment = bar_entertainment_fill_amount - bar_entertaiment_.fillAmount;
+        float diference_drama = bar_drama_fill_amount - bar_drama_.fillAmount;
+
+        for (int i = 0; i < slices; ++i) {
+            bar_truth_.fillAmount += diference_truth / (float)slices;
+            bar_entertaiment_.fillAmount += diference_enterteinment / (float)slices;
+            bar_drama_.fillAmount += diference_drama / (float)slices;
+            yield return new WaitForSeconds(time_delta);
+        }
+
+        bar_truth_.fillAmount = bar_truth_fill_amount;
+        bar_entertaiment_.fillAmount = bar_entertainment_fill_amount;
+        bar_drama_.fillAmount = bar_drama_fill_amount;
+
+
+        yield return null;
     }
 
 }
