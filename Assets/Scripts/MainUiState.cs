@@ -10,7 +10,10 @@ public class MainUiState : MonoBehaviour
     [SerializeField] MainUiController main_menu_controller_;
     [SerializeField] CardDataHelper card_data_helper_;
     [SerializeField] Animator character_animator_;
-    [SerializeField] Animator main_ui_;
+    //[SerializeField] Animator main_ui_;
+
+    [SerializeField] Animator left_answer_animator_;
+    [SerializeField] Animator right_answer_animator_;
     private enum Card { Left = -1, Right = 1 };
 
     private void Start()
@@ -69,7 +72,7 @@ public class MainUiState : MonoBehaviour
         CardDataHelper.SelectNewCard();
         main_menu_controller_.SetupUI();
         EvaluateDeadConditions();
-        TriggerAnimations();
+        StartCoroutine(TriggerAnimations());
 
     }
 
@@ -82,10 +85,22 @@ public class MainUiState : MonoBehaviour
 
     }
 
-    private void TriggerAnimations()
+    private IEnumerator TriggerAnimations()
     {
         character_animator_.SetTrigger("ChangeCharacter");
         // main_ui_.SetTrigger("ChangeCharacter");
+        left_answer_animator_.SetTrigger("FadeOut");
+        right_answer_animator_.SetTrigger("FadeOut");
+
+        yield return new WaitForSeconds(3f);
+
+        left_answer_animator_.SetTrigger("FadeIn");
+
+        yield return new WaitForSeconds(3f);
+
+        right_answer_animator_.SetTrigger("FadeIn");
+
+        yield return null;
     }
 
     private void UnSelectButton() {
