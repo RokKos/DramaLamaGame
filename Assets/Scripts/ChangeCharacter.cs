@@ -15,7 +15,13 @@ public class ChangeCharacter : MonoBehaviour
     AudioClip prev_sound_swosh_out_ = null;
 
 
-    [SerializeField] List<Sprite> charater_avatars_;  
+    [SerializeField] List<Sprite> charater_avatars_;
+
+    private void Start()
+    {
+        prev_character_ = charater_avatars_[0];
+    }
+
     public void ChangeCharacterAndDisable() {
         AssignRandomCharacter();
         PlaySwoshInSFX();
