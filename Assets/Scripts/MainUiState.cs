@@ -19,6 +19,13 @@ public class MainUiState : MonoBehaviour
         CardDataHelper.SelectNewCard();
     }
 
+    private void Update()
+    {
+        if (Input.GetMouseButtonUp(0)) {
+            UnSelectButton();
+        }   
+    }
+
     public void SelectCard(int side) {
         float truth_meter_change = 0;
         float entertaiment_meter_change = 0;
@@ -64,7 +71,6 @@ public class MainUiState : MonoBehaviour
         EvaluateDeadConditions();
         TriggerAnimations();
 
-
     }
 
     void EvaluateDeadConditions() {
@@ -79,6 +85,12 @@ public class MainUiState : MonoBehaviour
     private void TriggerAnimations()
     {
         character_animator_.SetTrigger("ChangeCharacter");
-        main_ui_.SetTrigger("ChangeCharacter");
+        // main_ui_.SetTrigger("ChangeCharacter");
+    }
+
+    private void UnSelectButton() {
+        // This is hacky
+        GameObject myEventSystem = GameObject.Find("EventSystem");
+        myEventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
     }
 }
