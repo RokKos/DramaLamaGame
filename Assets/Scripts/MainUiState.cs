@@ -113,12 +113,9 @@ public class MainUiState : MonoBehaviour
         left_answer_animator_.SetTrigger("FadeOut");
         right_answer_animator_.SetTrigger("FadeOut");
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2.5f);
 
         left_answer_animator_.SetTrigger("FadeIn");
-
-        yield return new WaitForSeconds(3f);
-
         right_answer_animator_.SetTrigger("FadeIn");
 
         yield return null;
