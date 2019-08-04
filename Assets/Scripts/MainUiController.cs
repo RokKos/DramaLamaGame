@@ -13,6 +13,12 @@ public class MainUiController : MonoBehaviour
     [SerializeField] Image bar_entertaiment_;
     [SerializeField] Image bar_drama_;
 
+    [SerializeField] Image img_reason_;
+
+    [SerializeField] Sprite reasons_truth_;
+    [SerializeField] Sprite reasons_entertaiment_;
+    [SerializeField] Sprite reasons_drama_;
+
     private float bar_truth_fill_amount = 0.5f;
     private float bar_entertainment_fill_amount = 0.5f;
     private float bar_drama_fill_amount = 0.5f;
@@ -65,6 +71,25 @@ public class MainUiController : MonoBehaviour
         bar_truth_.fillAmount = bar_truth_fill_amount;
         bar_entertaiment_.fillAmount = bar_entertainment_fill_amount;
         bar_drama_.fillAmount = bar_drama_fill_amount;
+    }
+
+    public void SetReason(bool dead_by_truth, bool dead_by_entertainment, bool dead_by_drama) {
+        if (dead_by_truth) {
+            img_reason_.sprite = reasons_truth_;
+            return;
+        }
+
+        if (dead_by_entertainment)
+        {
+            img_reason_.sprite = reasons_entertaiment_;
+            return;
+        }
+
+        if (dead_by_drama)
+        {
+            img_reason_.sprite = reasons_drama_;
+            return;
+        }
     }
 
 }

@@ -1357,6 +1357,11 @@ MonoBehaviour:
   bar_truth_: {fileID: 3680764813084919957}
   bar_entertaiment_: {fileID: 13100013}
   bar_drama_: {fileID: 1353036022}
+  img_reason_: {fileID: 1503718235}
+  reasons_truth_: {fileID: 21300000, guid: 2e2aa2b85ddbd4344bc862feb3905688, type: 3}
+  reasons_entertaiment_: {fileID: 21300000, guid: 51d3a84d6399dd04ba594bdfaa7cf3fd,
+    type: 3}
+  reasons_drama_: {fileID: 21300000, guid: 61e17dbe26b4d064e85e32e47d5b8ad6, type: 3}
 --- !u!4 &1128265833
 Transform:
   m_ObjectHideFlags: 0

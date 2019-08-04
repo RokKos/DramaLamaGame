@@ -92,10 +92,14 @@ public class MainUiState : MonoBehaviour
     }
 
     void EvaluateDeadConditions() {
-        bool dead = main_menu_controller_.GetTruthBar() <= 0 || main_menu_controller_.GetEntertainmentBar() <= 0 || main_menu_controller_.GetDramaBar() <= 0;
+        bool dead_by_truth = main_menu_controller_.GetTruthBar() <= 0;
+        bool dead_by_entertainment = main_menu_controller_.GetEntertainmentBar() <= 0;
+        bool dead_by_drama = main_menu_controller_.GetDramaBar() <= 0;
+        bool dead = dead_by_truth || dead_by_entertainment || dead_by_drama;
 
         if (dead) {
             pln_game_over_.SetActive(true);
+            main_menu_controller_.SetReason(dead_by_truth, dead_by_entertainment, dead_by_drama);
         }
 
     }
