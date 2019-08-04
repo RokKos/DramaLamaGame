@@ -585,7 +585,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: a48472125b465e9458fc1f26b3adfc44, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b9fb3064598fbbc4ba0b5eb1326a0510, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -628,10 +628,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 80d5a38cca120d84198ed2648f891e27, type: 3}
   - {fileID: 8300000, guid: 8daea77190769d943861fe1979e1a9ee, type: 3}
   charater_avatars_:
-  - {fileID: 21300000, guid: a48472125b465e9458fc1f26b3adfc44, type: 3}
-  - {fileID: 21300000, guid: fae8cff74a680eb43a23dce31b161f5e, type: 3}
-  - {fileID: 21300000, guid: 2f5d1aacaf545a44998bec5992a0d844, type: 3}
-  - {fileID: 21300000, guid: 4c3f446db65df4a4eb2566867e19c729, type: 3}
+  - {fileID: 21300000, guid: b9fb3064598fbbc4ba0b5eb1326a0510, type: 3}
+  - {fileID: 21300000, guid: 0e352acdc81ca9e4b854fd64e285a88e, type: 3}
+  - {fileID: 21300000, guid: ff98c0490b1ccf345b60e91be1c21c67, type: 3}
+  - {fileID: 21300000, guid: 4b74dacf6bf092142b99b411c2de78cc, type: 3}
 --- !u!1 &244583158
 GameObject:
   m_ObjectHideFlags: 0

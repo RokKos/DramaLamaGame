@@ -34,6 +34,8 @@ public class MainUiState : MonoBehaviour
         card_data_helper_.ReloadCardData(false);
         CardDataHelper.SelectNewCard();
         pln_game_over_.SetActive(false);
+        left_answer_animator_.SetTrigger("FadeIn");
+        right_answer_animator_.SetTrigger("FadeIn");
     }
 
     private void Update()
