@@ -14,6 +14,10 @@ public class MainUiState : MonoBehaviour
 
     [SerializeField] Animator left_answer_animator_;
     [SerializeField] Animator right_answer_animator_;
+
+    [SerializeField] AudioSource sfx_btn_click_;
+
+
     private enum Card { Left = -1, Right = 1 };
 
     private void Start()
@@ -73,6 +77,8 @@ public class MainUiState : MonoBehaviour
         main_menu_controller_.SetupUI();
         EvaluateDeadConditions();
         StartCoroutine(TriggerAnimations());
+
+        sfx_btn_click_.Play();
 
     }
 
