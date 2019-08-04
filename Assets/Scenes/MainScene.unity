@@ -1620,6 +1620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c45fe9430f5b0d643b3f0542744f0f0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main_ui_state_: {fileID: 1128265834}
   main_text_: {fileID: 1226087912}
   right_answer_text_: {fileID: 1755218480}
   left_answer_text_: {fileID: 1132510423}

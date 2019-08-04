@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class MainUiController : MonoBehaviour
 {
+    [SerializeField] MainUiState main_ui_state_;
+
     [SerializeField] Text main_text_;
     [SerializeField] Text right_answer_text_;
     [SerializeField] Text left_answer_text_;
@@ -108,6 +110,9 @@ public class MainUiController : MonoBehaviour
         bar_truth_.fillAmount = bar_truth_fill_amount;
         bar_entertaiment_.fillAmount = bar_entertainment_fill_amount;
         bar_drama_.fillAmount = bar_drama_fill_amount;
+
+        // Hacky
+        main_ui_state_.EvaluateDeadConditions();
 
 
         yield return null;

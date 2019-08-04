@@ -87,7 +87,7 @@ public class MainUiState : MonoBehaviour
         main_menu_controller_.ChangeDramaFillAmount(drama_meter_change);
         CardDataHelper.SelectNewCard();
         main_menu_controller_.SetupUI();
-        EvaluateDeadConditions();
+
         StartCoroutine(TriggerAnimations());
 
         sfx_btn_click_.Play();
@@ -95,7 +95,7 @@ public class MainUiState : MonoBehaviour
 
     }
 
-    void EvaluateDeadConditions() {
+    public void EvaluateDeadConditions() {
         bool dead_by_truth = main_menu_controller_.GetTruthBar() <= 0;
         bool dead_by_entertainment = main_menu_controller_.GetEntertainmentBar() <= 0;
         bool dead_by_drama = main_menu_controller_.GetDramaBar() <= 0;
