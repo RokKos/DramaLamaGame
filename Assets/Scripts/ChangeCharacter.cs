@@ -8,7 +8,8 @@ public class ChangeCharacter : MonoBehaviour
     [SerializeField] Image charater_image_;
     Sprite prev_character_ = null;
 
-    [SerializeField] AudioSource sfx_swoosh_;
+    [SerializeField] AudioSource sfx_swoosh_in_;
+    [SerializeField] AudioSource sfx_swoosh_out_;
     [SerializeField] List<AudioClip> sfx_for_swosh_in_;
     [SerializeField] List<AudioClip> sfx_for_swosh_out_;
     AudioClip prev_sound_swosh_in_ = null;
@@ -53,7 +54,7 @@ public class ChangeCharacter : MonoBehaviour
             clip_to_play = sfx_for_swosh_in_[Random.Range(0, sfx_for_swosh_in_.Count)];
         }
         prev_sound_swosh_in_ = clip_to_play;
-        sfx_swoosh_.PlayOneShot(clip_to_play);
+        sfx_swoosh_in_.PlayOneShot(clip_to_play);
     }
 
     private void PlaySwoshOutSFX()
@@ -64,6 +65,6 @@ public class ChangeCharacter : MonoBehaviour
             clip_to_play = sfx_for_swosh_out_[Random.Range(0, sfx_for_swosh_out_.Count)];
         }
         prev_sound_swosh_out_ = clip_to_play;
-        sfx_swoosh_.PlayOneShot(clip_to_play);
+        sfx_swoosh_out_.PlayOneShot(clip_to_play);
     }
 }
