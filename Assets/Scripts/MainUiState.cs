@@ -18,6 +18,8 @@ public class MainUiState : MonoBehaviour
     [SerializeField] AudioSource sfx_btn_click_;
     [SerializeField] AudioSource sfx_action_;
 
+    [SerializeField] GameObject pln_game_over_;
+
 
     [SerializeField] List<AudioClip> sfx_for_action_;
     AudioClip prev_sound = null;
@@ -29,6 +31,7 @@ public class MainUiState : MonoBehaviour
     {
         card_data_helper_.ReloadCardData(false);
         CardDataHelper.SelectNewCard();
+        pln_game_over_.SetActive(false);
     }
 
     private void Update()
@@ -92,7 +95,7 @@ public class MainUiState : MonoBehaviour
         bool dead = main_menu_controller_.GetTruthBar() <= 0 || main_menu_controller_.GetEntertainmentBar() <= 0 || main_menu_controller_.GetDramaBar() <= 0;
 
         if (dead) {
-            SceneManager.LoadScene("GameOver");
+            pln_game_over_.SetActive(true);
         }
 
     }
@@ -128,5 +131,9 @@ public class MainUiState : MonoBehaviour
         }
 
         sfx_action_.PlayOneShot(clip_to_play);
+    }
+
+    public void TryAgain() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
