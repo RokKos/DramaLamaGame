@@ -262,6 +262,11 @@ PrefabInstance:
       propertyPath: m_Text
       value: DRAMA
       objectReference: {fileID: 0}
+    - target: {fileID: 948967337, guid: 8a9930a6910fd814690c62bb64eb22df, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b3554ff366fba85458223a57a1de7b0c,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a9930a6910fd814690c62bb64eb22df, type: 3}
 --- !u!224 &13100012 stripped
@@ -981,12 +986,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1654143266911175943}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.399994, y: 12.899994}
-  m_SizeDelta: {x: -104.6, y: -138.3}
+  m_AnchoredPosition: {x: -3.1, y: 12.899994}
+  m_SizeDelta: {x: -115.6, y: -138.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1226087912
 MonoBehaviour:
@@ -1172,6 +1177,11 @@ PrefabInstance:
       propertyPath: m_Text
       value: FUN
       objectReference: {fileID: 0}
+    - target: {fileID: 948967337, guid: 8a9930a6910fd814690c62bb64eb22df, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4b9179d78a8a9924da424d25aef3b58e,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a9930a6910fd814690c62bb64eb22df, type: 3}
 --- !u!224 &1353036021 stripped
@@ -1222,7 +1232,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1654143266911175943}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1382,11 +1392,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1654143266911175943}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 73, y: -126}
+  m_AnchoredPosition: {x: 53, y: -126}
   m_SizeDelta: {x: 124, y: 109}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1814903885
@@ -1975,9 +1985,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1226087911}
   - {fileID: 1582196631}
   - {fileID: 1814903884}
+  - {fileID: 1226087911}
   m_Father: {fileID: 1064039780}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
